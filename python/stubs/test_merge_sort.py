@@ -78,6 +78,7 @@ def concurrent_merge_sort(xs, callback):
 def test_concurrent_merge_sort():
     called = False
     def callback(result):
+        nonlocal called
         called = True
         assert result == [1, 2, 3, 4, 5]
     concurrent_merge_sort([2, 3, 1, 5, 4], callback)

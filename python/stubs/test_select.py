@@ -51,6 +51,7 @@ def recvall(src: Channel, callback):
 def test_select():
     called = False
     def callback(result):
+        nonlocal called
         called = True
         assert [x for x in sorted(result)] == [1, 2, 3, 4, 5, 6]
 
